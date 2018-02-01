@@ -66,7 +66,7 @@ if($arrJson == ""){
 		
 			
 		
-		}else if(mysqli_num_rows($sql)==0){
+		}else if(mysqli_num_rows($sql1)==0){
 			$arrPostData = array();
 			  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
 			  $arrPostData['messages'][0]['type'] = "text";
