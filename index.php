@@ -35,7 +35,9 @@ if($arrJson == ""){
 	$objDB = mysqli_select_db($objConnect,"sql12218252");
 		$s = "SELECT * FROM user Where token = '$check'";
 	$sql = mysqli_query($objConnect,$s);
-
+	
+	
+	//ค้นหารถ
 	if(mysqli_num_rows($sql)==1){
 		
 		$s1 = "SELECT * FROM car Where license = '$license' and token = '$check' or token2 = '$check'";
@@ -69,6 +71,8 @@ if($arrJson == ""){
 			  $arrPostData['messages'][0]['type'] = "text";
 			  $arrPostData['messages'][0]['text'] = "ขออภัยค่ะเลขทะเบียนหรือข้อความไม่ถูกต้อง";
 			//echo "<BR>ขออภัยค่ะ Line ID ยังไม่ได้ลงทะบียนค่ะ";
+		}
+		
 		}else{
 			
 				$arrPostData = array();
@@ -79,8 +83,8 @@ if($arrJson == ""){
 			
 			}
 		
-		}
-				 if($arrJson['events'][0]['message']['text'] == "รถ"){
+		//รายชื่อรถ
+		if($arrJson['events'][0]['message']['text'] == "รถ"){
 
 				$objDB = mysqli_select_db($objConnect,"sql12218252");
 				$s1 = "SELECT * FROM user Where token = '$check'";
