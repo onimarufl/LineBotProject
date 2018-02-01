@@ -66,10 +66,10 @@ if($arrJson == ""){
 			$arrPostData['messages'][0]['longitude'] = $_SESSION["longitude"];
 			
 		}else{
-			$arrPostData = array();
+			  $arrPostData = array();
 			  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-			  $arrPostData['messages'][0]['type'] = "text";
-			  $arrPostData['messages'][0]['text'] = "ขออภัยค่ะเลขทะเบียนหรือข้อความไม่ถูกต้อง";
+			  $arrPostData['messages'][1]['type'] = "text";
+			  $arrPostData['messages'][1]['text'] = "ขออภัยค่ะเลขทะเบียนหรือข้อความไม่ถูกต้อง";
 			//echo "<BR>ขออภัยค่ะ Line ID ยังไม่ได้ลงทะบียนค่ะ";
 		}
 		
