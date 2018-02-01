@@ -49,7 +49,7 @@ if($arrJson == ""){
 			$sql1 = mysqli_query($objConnect,$s1);
 				
 			if(mysqli_num_rows($sql1)>=1){
-				/*$row = mysqli_fetch_array($sql1);
+				$row = mysqli_fetch_array($sql1);
 				
 				$_SESSION["cartype"] = $row[cartype];
 				$_SESSION["license"] = $row[license];
@@ -64,11 +64,7 @@ if($arrJson == ""){
 			$arrPostData['messages'][0]['address'] = "".$_SESSION["license"];
 			$arrPostData['messages'][0]['latitude'] = $_SESSION["latitude"];
 			$arrPostData['messages'][0]['longitude'] = $_SESSION["longitude"];
-			*/
-				$arrPostData = array();
-			  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-			  $arrPostData['messages'][0]['type'] = "text";
-			  $arrPostData['messages'][0]['text'] = "ข้อความถูกต้อง";
+			
 		}else{
 			  $arrPostData = array();
 			  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
